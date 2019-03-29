@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { Link, graphql, StaticQuery } from 'gatsby'
 
 class BlogRoll extends React.Component {
   render() {
-    const { data } = this.props
+    const { data, isDrawerOpen } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
     return (
       <div className="columns is-multiline">
+        {isDrawerOpen}
         {posts &&
           posts.map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
@@ -40,6 +42,14 @@ class BlogRoll extends React.Component {
     )
   }
 }
+const mapStateToProps = state => ({
+  isDrawerOpen: state.app.isDrawerOpen
+});
+
+const ConnectedBlogRoll = connect(
+  mapStateToProps,
+  null,
+)(BlogRoll);
 
 BlogRoll.propTypes = {
   data: PropTypes.shape({
@@ -74,6 +84,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <BlogRoll data={data} count={count} />}
+    render={(data, count) => <ConnectedBlogRoll data={data} count={count} />}
   />
 )
