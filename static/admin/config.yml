@@ -31,6 +31,18 @@ collections:
         description: 'General Site Settings'
         fields:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
+      - name: menu
+        label: menu
+        files:
+          - name: menu
+            label: menu
+            file: '_data/menuConfig.yaml'
+            fields:
+              - name: menu
+                label: menu
+                widget: list
+                fields:
+                  - {name: name, label: name}
   - name: "pages"
     label: "Pages"
     files:
