@@ -18,12 +18,14 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-  - name: "menuconfig"
-    file: "src/servicemd/menuconfig.md"
-    label: "menuconfig"
-    extension: markdown
-    fields:
-      - {label: "config", name: "body", widget: "markdown"}
+  - name: "serviceConfigs"
+    label: "serviceConfigs"
+    files:
+      - file: "src/service/menuconfig.md"
+        label: "MenuConfig"
+        extension: markdown
+        fields:
+          - {label: "config", name: "body", widget: "markdown"}
   - name: "pages"
     label: "Pages"
     files:
