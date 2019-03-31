@@ -56,6 +56,13 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/service`,
+      },
+    },
     {
       resolve: 'gatsby-transformer-remark',
       options: {

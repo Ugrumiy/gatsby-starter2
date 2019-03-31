@@ -34,11 +34,11 @@ const Navbar = class extends React.Component {
 
   render() {
     const {
-      data: {
-        allMarkdownRemark: {
-          edges
+      data:{
+        serviceJson:{
+          items: menuItems
         }
-      }
+      },
     } = this.props;
     return (
       <nav
@@ -52,7 +52,7 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              {edges[0].node.frontmatter.items.map(item => <Link className="navbar-item" to={`/${item.name}`}>{item.name}</Link>)}
+              {menuItems.map(item => <Link className="navbar-item" to={`/${item.name}`}>{item.name}</Link>)}
             </div>
           </div>
         </div>
@@ -63,23 +63,13 @@ const Navbar = class extends React.Component {
 
 export default () => (
   <StaticQuery
-    query={graphql`
-{
-        allMarkdownRemark(
-          filter: { frontmatter: { templateKey: { eq: "service" } } }
-        ) {
-          edges {
-            node {
-              frontmatter {
-                items {
-                  name
-                }
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={(data, count) => <Navbar data={data}/>}
+    query={graphql`{
+  serviceJson {
+    items{
+      name
+    }
+  }
+}`}
+    render={(data) => <Navbar data={data}/>}
   />
 )
