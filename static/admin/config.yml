@@ -19,8 +19,8 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
   - name: "menuconfig"
-    label: "config"
-    folder: "src/servicemd"
+    file: "src/servicemd/menuconfig.md"
+    label: "menuconfig"
     extension: markdown
     fields:
       - {label: "config", name: "body", widget: "markdown"}
