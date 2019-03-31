@@ -31,17 +31,11 @@ collections:
         description: 'General Site Settings'
         fields:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
-  - name: "menuConfig"
-    label: "Menu COnfig"
-    files:
-        label: "MenuConfig"
-        name: "MenuConfig"
+      - name: "menuConfig"
+        label: "Menu COnfig"
+        widget: list
         fields:
-          - name: MenuConfig
-            label: MenuConfig
-            widget: list
-            fields:
-              - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+          - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
   - name: "pages"
     label: "Pages"
     files:
