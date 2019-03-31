@@ -1,6 +1,6 @@
 ---
 templateKey: 'service'
-fruit:
+items:
   - name: apple
     cost: $1
     color: red

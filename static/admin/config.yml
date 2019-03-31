@@ -24,9 +24,8 @@ collections:
       - file: "src/service/menuconfig.md"
         label: "MenuConfig"
         name: "MenuConfig"
-        extension: json
         fields:
-          - {label: "config", name: "body", widget: "markdown"}
+          - {label: "items", name: "items", widget: "text"}
   - name: "pages"
     label: "Pages"
     files:
