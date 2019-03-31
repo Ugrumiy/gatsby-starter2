@@ -35,7 +35,7 @@ const Navbar = class extends React.Component {
   render() {
     const {
       data:{
-        serviceJson:{
+        dataJson:{
           items: menuItems
         }
       },
@@ -64,7 +64,7 @@ const Navbar = class extends React.Component {
 export default () => (
   <StaticQuery
     query={graphql`{
-  serviceJson {
+  dataJson {
     items{
       name
     }

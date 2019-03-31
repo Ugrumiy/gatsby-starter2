@@ -18,15 +18,30 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-  - name: "serviceConfigs"
-    label: "serviceConfigs"
+
+  - name: 'settings'
+    label: 'Settings'
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
     files:
-      - file: "src/service/menuconfig.json"
+      - name: 'general'
+        label: 'Site Settings'
+        file: '_data/settings.json'
+        description: 'General Site Settings'
+        fields:
+          - { label: 'Global title', name: 'site_title', widget: 'string' }
+  - name: "menuConfig"
+    label: "Menu COnfig"
+    files:
         label: "MenuConfig"
         name: "MenuConfig"
-        extension: json
         fields:
-          - {label: "items", name: "items", widget: "text"}
+          - name: MenuConfig
+            label: MenuConfig
+            widget: list
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
   - name: "pages"
     label: "Pages"
     files:
