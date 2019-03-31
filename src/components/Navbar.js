@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import {graphql, Link, StaticQuery} from "gatsby";
 import github from "../img/github-icon.svg";
 import logo from "../img/logo.svg";
 
@@ -33,6 +33,13 @@ const Navbar = class extends React.Component {
   };
 
   render() {
+    const {
+      data: {
+        allMarkdownRemark: {
+          edges
+        }
+      }
+    } = this.props;
     return (
       <nav
         className="navbar is-transparent"
@@ -40,53 +47,12 @@ const Navbar = class extends React.Component {
         aria-label="main-navigation"
       >
         <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
           <div
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
+              {edges[0].node.frontmatter.fruit.map(item => <Link className="navbar-item" to={`/${item.name}`}>{item.name}</Link>)}
             </div>
           </div>
         </div>
@@ -95,4 +61,27 @@ const Navbar = class extends React.Component {
   }
 };
 
-export default Navbar;
+export default () => (
+  <StaticQuery
+    query={graphql`
+{
+        allMarkdownRemark(
+          filter: { frontmatter: { templateKey: { eq: "service" } } }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                fruit {
+                  name
+                  cost
+                  color
+                }
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={(data, count) => <Navbar data={data}/>}
+  />
+)
