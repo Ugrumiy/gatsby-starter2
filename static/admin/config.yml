@@ -21,11 +21,15 @@ collections:
   - name: "serviceConfigs"
     label: "serviceConfigs"
     files:
-      - file: "src/service/menuconfig.md"
+      - file: "src/_data/menuconfig.md"
         label: "MenuConfig"
         name: "MenuConfig"
         fields:
-          - {label: "items", name: "items", widget: "text"}
+          - name: MenuConfig
+            label: MenuConfig
+            widget: list
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
   - name: "pages"
     label: "Pages"
     files:
