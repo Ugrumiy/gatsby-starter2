@@ -29,7 +29,8 @@ collections:
         label: 'Site Settings'
         file: '_data/settings.json'
         description: 'General Site Settings'
-        field: { label: 'Global title', name: 'site_title', widget: 'string'}
+        fields:
+          - { label: 'Global title', name: 'site_title', widget: 'string'}
       - name: 'menu'
         label: 'menu'
         file: '_data/menuconfig.json'
