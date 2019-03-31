@@ -23,7 +23,6 @@ collections:
     files:
       - file: "src/service/menuconfig.md"
         label: "MenuConfig"
-        extension: markdown
         fields:
           - {label: "config", name: "body", widget: "markdown"}
   - name: "pages"
