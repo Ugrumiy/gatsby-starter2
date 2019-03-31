@@ -29,12 +29,7 @@ collections:
         label: 'Site Settings'
         file: '_data/settings.json'
         description: 'General Site Settings'
-        fields:
-          - {
-            label: 'Global title',
-            name: 'site_title',
-            widget: 'string'
-          }
+        field: { label: 'Global title', name: 'site_title', widget: 'string'}
       - name: 'menu'
         label: 'menu'
         file: '_data/menuconfig.json'
@@ -43,8 +38,9 @@ collections:
           - name: menu
             label: menu
             widget: list
-            fields:
-              - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+            allow_add: true
+            default: ["news"]
+            field: { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
   - name: "pages"
     label: "Pages"
     files:
