@@ -18,11 +18,10 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-  - name: "model"
-    label: "model"
-    folder: "src/pages/products"
-    create: true
-    slug: "{{slug}}"
+  - name: "menuconfig"
+    label: "config"
+    folder: "src/servicemd"
+    extension: markdown
     fields:
       - {label: "config", name: "body", widget: "markdown"}
   - name: "pages"
