@@ -1,5 +1,10 @@
 {
-  "items": [{
-    "name" : "dsadasdasd"
-  }]
+  "items": [
+    {
+      "name": "dsadasdasd"
+    },
+    {
+      "name": "qwe"
+    }
+  ]
 }
