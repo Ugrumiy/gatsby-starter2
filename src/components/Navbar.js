@@ -52,7 +52,7 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              {edges[0].node.frontmatter.fruit.map(item => <Link className="navbar-item" to={`/${item.name}`}>{item.name}</Link>)}
+              {edges[0].node.frontmatter.items.map(item => <Link className="navbar-item" to={`/${item.name}`}>{item.name}</Link>)}
             </div>
           </div>
         </div>
@@ -71,10 +71,8 @@ export default () => (
           edges {
             node {
               frontmatter {
-                fruit {
+                items {
                   name
-                  cost
-                  color
                 }
               }
             }
