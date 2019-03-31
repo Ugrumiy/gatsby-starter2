@@ -27,7 +27,7 @@ collections:
     files:
       - name: 'general'
         label: 'Site Settings'
-        file: '_data/siteSettings.yaml'
+        file: 'arc/_data/siteSettings.yaml'
         description: 'General Site Settings'
         fields:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
@@ -36,7 +36,7 @@ collections:
         files:
           - name: menu
             label: menu
-            file: '_data/menuConfig.yaml'
+            file: 'src/_data/menuConfig.yaml'
             fields:
               - name: menu
                 label: menu
