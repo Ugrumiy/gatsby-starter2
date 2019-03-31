@@ -33,16 +33,14 @@ collections:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
       - name: 'authors'
         label: 'Authors'
-        file: 'srs/_data/menuConfig.yaml'
+        file: 'src/_data/menuConfig.yaml'
         description: 'Author descriptions'
         fields:
           - name: authors
             label: Authors
-            label_singular: 'Author'
             widget: list
             fields:
               - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
-              - { label: 'Description', name: 'description', widget: 'markdown' }
   - name: "pages"
     label: "Pages"
     files:
