@@ -6,15 +6,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "qqqqqq"
-    label: "qqqqqqqqqqqq"
-    folder: "src/pages/"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
@@ -27,7 +18,13 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-
+  - name: "model"
+    label: "model"
+    folder: "src/pages/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "config", name: "body", widget: "markdown"}
   - name: "pages"
     label: "Pages"
     files:
