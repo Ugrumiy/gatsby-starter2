@@ -27,7 +27,7 @@ collections:
     files:
       - name: 'general'
         label: 'Site Settings'
-        file: 'arc/_data/siteSettings.yaml'
+        file: 'src/_data/siteSettings.yaml'
         description: 'General Site Settings'
         fields:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
