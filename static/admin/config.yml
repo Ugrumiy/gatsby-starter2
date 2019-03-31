@@ -35,13 +35,16 @@ collections:
             name: 'site_title',
             widget: 'string'
           }
-          - {
-            label: "Menu Config"
-            name: "menu_config"
+      - name: 'menu'
+        label: 'menu'
+        file: '_data/menuconfig.json'
+        description: 'menu descriptions'
+        fields:
+          - name: menu
+            label: menu
             widget: list
             fields:
               - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
-          }
   - name: "pages"
     label: "Pages"
     files:
