@@ -30,12 +30,18 @@ collections:
         file: '_data/settings.json'
         description: 'General Site Settings'
         fields:
-          - { label: 'Global title', name: 'site_title', widget: 'string' }
-      - name: "menuConfig"
-        label: "Menu COnfig"
-        widget: list
-        fields:
-          - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+          - {
+            label: 'Global title',
+            name: 'site_title',
+            widget: 'string'
+          }
+          - {
+            label: "Menu Config"
+            name: "menu_config"
+            widget: list
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+          }
   - name: "pages"
     label: "Pages"
     files:
