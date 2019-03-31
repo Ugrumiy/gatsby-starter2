@@ -1,4 +1,3 @@
-updates:
-  - date: '2019-03-29'
-    name: 'Add netlify-cms-app package with external deps, fix breaking preview templates'
-    version: 2.9.0
+authors:
+  - name: 'Add netlify-cms-app package with external deps, fix breaking preview templates'
+    decription: '2.9.0'
