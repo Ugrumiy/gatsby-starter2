@@ -31,12 +31,12 @@ collections:
         description: 'General Site Settings'
         fields:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
-      - name: 'authors'
+      - name: 'items'
         label: 'Authors'
-        file: 'src/_data/menuConfig.yaml'
+        file: 'src/_data/menuConfig.json'
         description: 'Author descriptions'
         fields:
-          - name: authors
+          - name: items
             label: Authors
             widget: list
             fields:
