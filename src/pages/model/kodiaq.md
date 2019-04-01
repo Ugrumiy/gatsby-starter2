@@ -17,6 +17,8 @@ layout:
         title: weqweqw
       - img: /img/products-grid3.jpg
         title: dfsdfsdf
+      - img: /img/products-grid2.jpg
+        title: tretert
     type: gallery
 ---
 
