@@ -33,13 +33,24 @@ collections:
       - label: "Testimonials"
         name: "testimonials"
         widget: "list"
-        fields:
-          - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
-          - label: Author
-            name: author
+        types:
+          - label: "Carousel"
+            name: "carousel"
             widget: object
             fields:
-              - {label: Name, name: name, widget: string, default: "Emmet"}
+              - {label: Header, name: header, widget: string, default: "Image Gallery"}
+              - {label: Template, name: template, widget: string, default: "carousel.html"}
+              - label: Images
+                name: images
+                widget: list
+                field: {label: Image, name: image, widget: image}
+          - label: "Spotlight"
+            name: "spotlight"
+            widget: object
+            fields:
+              - {label: Header, name: header, widget: string, default: "Spotlight"}
+              - {label: Template, name: template, widget: string, default: "spotlight.html"}
+              - {label: Text, name: text, widget: text, default: "Hello World"}
   - name: 'settings'
     label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
