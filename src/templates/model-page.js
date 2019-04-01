@@ -13,7 +13,7 @@ const Gallery = ({title, imgs}) => (<div>
   const compMap = {
     type1: Type1,
     type2: Type2,
-    gallery: Gallery
+    // gallery: Gallery
   };
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
