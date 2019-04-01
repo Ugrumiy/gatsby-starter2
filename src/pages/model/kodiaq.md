@@ -10,5 +10,8 @@ layout:
   - color: red
     title: Yahoooo updated!
     type: type1
+  - imgs: /img/apple-touch-icon.png
+    title: IT IS A GALLERY!!!
+    type: gallery
 ---
 
