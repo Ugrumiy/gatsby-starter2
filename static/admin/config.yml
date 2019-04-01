@@ -49,8 +49,6 @@ collections:
           - label: "Gallery"
             name: "gallery"
             widget: list
-              label: 'item'
-              name: 'item',
               fields:
                 - {label: "alt", name: "title", widget: "string"}
                 - {label: "img", name: "img", widget: "image"}
