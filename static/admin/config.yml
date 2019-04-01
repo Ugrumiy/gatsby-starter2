@@ -22,21 +22,24 @@ collections:
     label: "Model Page"
     folder: "src/pages/model"
     create: true
+    editor:
+      preview: false
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "model-page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - name: 'blocks'
-        label: 'Blocks'
+      - label: "Testimonials"
+        name: "testimonials"
+        widget: "list"
         fields:
-          - name: 'blocks1'
-            label: 'blockseqweqwe'
-            widget: 'list'
+          - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
+          - label: Author
+            name: author
+            widget: object
             fields:
-              - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
-              - { label: 'Name2', name: 'name2', widget: 'string', hint: 'First and Last' }
+              - {label: Name, name: name, widget: string, default: "Emmet"}
   - name: 'settings'
     label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
