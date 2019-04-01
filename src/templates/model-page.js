@@ -3,7 +3,13 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+const Type1 = ({title, color, type}) => <div style={{backgroundColor: `${color}`}}><h3>{type}</h3><h4>{title}</h4></div>;
+const Type2 = ({title, color, type}) => <div style={{backgroundColor: `${color}`}}><h3>{type}</h3><h4>{title}</h4></div>;
 
+  const compMap = {
+    Type1: Type1,
+    Type2: Type2,
+  };
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
@@ -26,8 +32,8 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 }
 
 const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data
-
+  const { markdownRemark: post } = data;
+  console.log('xxxxx', data.markdownRemark.frontmatter.layout);
   return (
     <Layout>
       <AboutPageTemplate
@@ -35,6 +41,7 @@ const AboutPage = ({ data }) => {
         title={post.frontmatter.title}
         content={post.html}
       />
+      {data.markdownRemark.frontmatter.layout.map((item) => React.createElement(compMap[item.type], {color: item.color, title:item.title}))}
     </Layout>
   )
 }
@@ -51,6 +58,11 @@ export const aboutPageQuery = graphql`
       html
       frontmatter {
         title
+        layout {
+          color
+          title
+          type
+        }
       }
     }
   }
