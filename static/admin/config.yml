@@ -29,13 +29,13 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - name: 'blocks'
-          label: 'Blocks'
-          fields:
-            - name: blocks
-              label: blocks
-              widget: list
-              fields:
-                - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+        label: 'Blocks'
+        fields:
+          - name: blocks
+            label: blocks
+            widget: list
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
   - name: 'settings'
     label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
