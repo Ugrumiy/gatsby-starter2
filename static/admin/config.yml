@@ -31,9 +31,9 @@ collections:
       - name: 'blocks'
         label: 'Blocks'
         fields:
-          - name: blocks1
-            label: blockseqweqwe
-            widget: list
+          - name: 'blocks1'
+            label: 'blockseqweqwe'
+            widget: 'list'
             fields:
               - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
               - { label: 'Name2', name: 'name2', widget: 'string', hint: 'First and Last' }
