@@ -6,9 +6,9 @@ description: '13123123123123'
 layout:
   - color: red
     title: Yahoooo!
-    type: Type1
+    type: type1
   - color: blue
-    title: Yahoooo2
-    type: Type2
+    title: Yahoooo22
+    type: type2
 ---
 

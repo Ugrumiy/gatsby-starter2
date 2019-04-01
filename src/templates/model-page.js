@@ -7,8 +7,8 @@ const Type1 = ({title, color, type}) => <div style={{backgroundColor: `${color}`
 const Type2 = ({title, color, type}) => <div style={{backgroundColor: `${color}`}}><h3>{type}</h3><h4>{title}</h4></div>;
 
   const compMap = {
-    Type1: Type1,
-    Type2: Type2,
+    type1: Type1,
+    type2: Type2,
   };
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
