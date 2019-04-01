@@ -49,9 +49,9 @@ collections:
           - label: "Gallery"
             name: "gallery"
             widget: list
-              fields:
-                - {label: "alt", name: "title", widget: "string"}
-                - {label: "img", name: "img", widget: "image"}
+            fields:
+              - {label: "alt", name: "title", widget: "string"}
+              - {label: "img", name: "img", widget: "image"}
   - name: 'settings'
     label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
