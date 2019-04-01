@@ -46,6 +46,12 @@ collections:
             fields:
               - {label: "Color", name: "color", widget: "string", default: "Red"}
               - {label: "Title", name: "title", widget: "string"}
+          - label: "Gallery"
+            name: "gallery"
+            widget: object
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "imgs", name: "imgs", widget: "image"}
   - name: 'settings'
     label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
