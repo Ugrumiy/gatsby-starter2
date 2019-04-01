@@ -50,8 +50,8 @@ collections:
             name: "gallery"
             widget: object
             fields:
-              - name: item
-                label: item
+              - name: items
+                label: items
                 widget: list
                 fields:
                   - {label: "alt", name: "title", widget: "string"}

@@ -10,7 +10,7 @@ layout:
   - color: red
     title: Yahoooo updated!
     type: type1
-  - item:
+  - items:
       - img: /img/blog-index.jpg
         title: werwerwer
       - img: /img/apple-touch-icon.png

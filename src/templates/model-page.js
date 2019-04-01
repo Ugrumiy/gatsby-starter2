@@ -5,9 +5,18 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 const Type1 = ({title, color, type}) => <div style={{backgroundColor: `${color}`}}><h3>{type}</h3><h4>{title}</h4></div>;
 const Type2 = ({title, color, type}) => <div style={{backgroundColor: `${color}`}}><h3>{type}</h3><h4>{title}</h4></div>;
+const Gallery = (props) => {
+  console.log(props);
+  return (<div>
+    <h4>{props.title}</h4>
+    <div>{props.items.map(item => <img src={item.img.childImageSharp.fixed.src} alt="werwer" />)}
+    </div>
+  </div>)
+};
   const compMap = {
     type1: Type1,
     type2: Type2,
+    gallery: Gallery
   };
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
@@ -40,7 +49,7 @@ const AboutPage = ({ data }) => {
         title={post.frontmatter.title}
         content={post.html}
       />
-      {data.markdownRemark.frontmatter.layout.map((item) => React.createElement(compMap[item.type], {color: item.color, title:item.title}))}
+      {data.markdownRemark.frontmatter.layout.map((item) => React.createElement(compMap[item.type], {...item}))}
     </Layout>
   )
 }
@@ -61,7 +70,19 @@ export const aboutPageQuery = graphql`
           color
           title
           type
+          items {
+            title
+                                img {
+                      id
+                      childImageSharp{
+                    		fixed {
+ src
+                    		}
+                      }
+                    }
+            }
         }
+        
       }
     }
   }
