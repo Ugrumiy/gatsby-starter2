@@ -30,27 +30,22 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - label: "Testimonials"
-        name: "testimonials"
+      - label: "Layout"
+        name: "layout"
         widget: "list"
         types:
-          - label: "Carousel"
-            name: "carousel"
+          - label: "Type1"
+            name: "type1"
             widget: object
             fields:
-              - {label: Header, name: header, widget: string, default: "Image Gallery"}
-              - {label: Template, name: template, widget: string, default: "carousel.html"}
-              - label: Images
-                name: images
-                widget: list
-                field: {label: Image, name: image, widget: image}
-          - label: "Spotlight"
-            name: "spotlight"
+              - {label: "Color", name: "color", widget: "string", default: "Blue"}
+              - {label: "Title", name: "title", widget: "string"}
+          - label: "Type2"
+            name: "type2"
             widget: object
             fields:
-              - {label: Header, name: header, widget: string, default: "Spotlight"}
-              - {label: Template, name: template, widget: string, default: "spotlight.html"}
-              - {label: Text, name: text, widget: text, default: "Hello World"}
+              - {label: "Color", name: "color", widget: "string", default: "Red"}
+              - {label: "Title", name: "title", widget: "string"}
   - name: 'settings'
     label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
