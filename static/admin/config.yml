@@ -48,10 +48,14 @@ collections:
               - {label: "Title", name: "title", widget: "string"}
           - label: "Gallery"
             name: "gallery"
-            widget: list
+            widget: object
             fields:
-              - {label: "alt", name: "title", widget: "string"}
-              - {label: "img", name: "img", widget: "image"}
+              - name: item
+                label: item
+                widget: list
+                fields:
+                  - {label: "alt", name: "title", widget: "string"}
+                  - {label: "img", name: "img", widget: "image"}
   - name: 'settings'
     label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
