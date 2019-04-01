@@ -52,7 +52,7 @@ collections:
               label: 'item'
               name: 'item',
               fields:
-                - {label: "Title", name: "title", widget: "string"}
+                - {label: "alt", name: "title", widget: "string"}
                 - {label: "img", name: "img", widget: "image"}
   - name: 'settings'
     label: 'Settings'
