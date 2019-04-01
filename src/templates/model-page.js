@@ -5,15 +5,9 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 const Type1 = ({title, color, type}) => <div style={{backgroundColor: `${color}`}}><h3>{type}</h3><h4>{title}</h4></div>;
 const Type2 = ({title, color, type}) => <div style={{backgroundColor: `${color}`}}><h3>{type}</h3><h4>{title}</h4></div>;
-const Gallery = ({title, imgs}) => (<div>
-  <h4>{title}</h4>
-  <div>{imgs.map(item => <img src={item.src} alt={item.alt} />)}
-  </div>
-</div>);
   const compMap = {
     type1: Type1,
     type2: Type2,
-    // gallery: Gallery
   };
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
