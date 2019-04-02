@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { createStore as reduxCreateStore, compose } from 'redux';
 import rootReducer from '.';
@@ -11,8 +12,11 @@ const createStore = () => reduxCreateStore(
   rootReducer,
   {},
   composeEnhancers(),
-  );
-
-export default ({ element }) => (
+);
+const ReduxWrapper = ({ element }) => (
   <Provider store={createStore()}>{element}</Provider>
 );
+ReduxWrapper.propTypes = {
+  element: PropTypes.element,
+};
+export default ReduxWrapper;

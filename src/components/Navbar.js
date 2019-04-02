@@ -1,43 +1,14 @@
-import React from "react";
-import {graphql, Link, StaticQuery} from "gatsby";
-import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql, Link, StaticQuery } from 'gatsby';
 
 const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-      navBarActiveClass: ""
-    };
-  }
-
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: "is-active"
-            })
-          : this.setState({
-              navBarActiveClass: ""
-            });
-      }
-    );
-  };
-
   render() {
     const {
-      data:{
-        menuYaml:{
-          items: menuItems
-        }
+      data: {
+        menuYaml: {
+          items: menuItems,
+        },
       },
     } = this.props;
     return (
@@ -46,21 +17,16 @@ const Navbar = class extends React.Component {
         role="navigation"
         aria-label="main-navigation"
       >
-        <div className="container">
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              {menuItems.map(item => <Link className="navbar-item" to={`/${item.name}`}>{item.name}</Link>)}
-            </div>
-          </div>
+        <div className="navbar-start has-text-centered">
+          {menuItems.map(item => <Link className="navbar-item" to={`/${item.name}`}>{item.name}</Link>)}
         </div>
       </nav>
     );
   }
 };
-
+Navbar.propTypes = {
+  data: PropTypes.object,
+};
 export default () => (
   <StaticQuery
     query={graphql`{
@@ -70,6 +36,6 @@ export default () => (
     }
   }
 }`}
-    render={(data) => <Navbar data={data}/>}
+    render={data => <Navbar data={data} />}
   />
-)
+);

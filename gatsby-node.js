@@ -15,48 +15,51 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              tags
               templateKey
             }
           }
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()));
-      return Promise.reject(result.errors)
+      return Promise.reject(result.errors);
     }
 
     const posts = result.data.allMarkdownRemark.edges;
 
-    posts.forEach(edge => {
-      const id = edge.node.id;
+    posts.forEach((edge) => {
+      const {
+        node: {
+          id,
+        },
+      } = edge;
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`,
         ),
         // additional data can be passed via context
         context: {
           id,
         },
-      })
-    })
-  })
-}
+      });
+    });
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   fmImagesToRelative(node); // convert image paths for gatsby images
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode });
     createNodeField({
-      name: `slug`,
+      name: 'slug',
       node,
       value,
-    })
+    });
   }
 };

@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
@@ -73,18 +74,9 @@ query Wage($id: String!) {
         type
         items {
           title
-          img {
-            id
-            childImageSharp {
-              fixed {
-                src
-              }
-            }
-          }
         }
       }
     }
   }
 }
-
 `

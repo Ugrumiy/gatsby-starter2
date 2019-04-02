@@ -1,4 +1,4 @@
-var proxy = require("http-proxy-middleware");
+const proxy = require('http-proxy-middleware');
 
 module.exports = {
   siteMetadata: {
@@ -7,24 +7,23 @@ module.exports = {
       'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
   },
   plugins: [
-    // 'gatsby-plugin-eslint',
+    'gatsby-plugin-eslint',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
     {
-      resolve: `gatsby-plugin-alias-imports`,
+      resolve: 'gatsby-plugin-alias-imports',
       options: {
         alias: {
-          "@src": "src",
-          "@state": "src/state",
-          "@components": "src/components",
-          "@layouts": "src/layouts",
-          "@pages": "src/pages",
-          "@templates": "src/templates",
+          '@src': 'src',
+          '@state': 'src/state',
+          '@components': 'src/components',
+          '@layouts': 'src/layouts',
+          '@pages': 'src/pages',
+          '@templates': 'src/templates',
         },
         extensions: [
-          "js",
+          'js',
         ],
-      }
+      },
     },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
@@ -57,8 +56,8 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    `gatsby-transformer-json`,
-    `gatsby-transformer-yaml`,
+    'gatsby-transformer-json',
+    'gatsby-transformer-yaml',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -104,15 +103,15 @@ module.exports = {
   ],
   // for avoiding CORS while developing Netlify Functions locally
   // read more: https://www.gatsbyjs.org/docs/api-proxy/#advanced-proxying
-  developMiddleware: app => {
+  developMiddleware: (app) => {
     app.use(
-      "/.netlify/functions/",
+      '/.netlify/functions/',
       proxy({
-        target: "http://localhost:9000",
+        target: 'http://localhost:9000',
         pathRewrite: {
-          "/.netlify/functions/": "",
+          '/.netlify/functions/': '',
         },
-      })
-    )
+      }),
+    );
   },
-}
+};
