@@ -41,7 +41,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 
 const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data;
-  console.log('xxxxx', data.markdownRemark.frontmatter.layout);
+  console.log('xxxxx', JSON.parse(post.frontmatter.description));
   return (
     <Layout>
       <AboutPageTemplate
@@ -66,6 +66,7 @@ query Wage($id: String!) {
     html
     frontmatter {
       title
+      description
       layout {
         color
         title
