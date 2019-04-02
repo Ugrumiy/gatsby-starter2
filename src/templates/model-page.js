@@ -61,29 +61,18 @@ AboutPage.propTypes = {
 export default AboutPage
 
 export const aboutPageQuery = graphql`
-  query Wage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        title
-        layout {
-          color
-          title
-          type
-          items {
-            title
-                                img {
-                      id
-                      childImageSharp{
-                    		fixed {
- src
-                    		}
-                      }
-                    }
-            }
+query Wage($id: String!) {
+  markdownRemark(id: {eq: $id}) {
+    frontmatter {
+      layout {
+        items {
+          img {
+          publiсURL
+          }
         }
-        
       }
     }
   }
+}
+
 `

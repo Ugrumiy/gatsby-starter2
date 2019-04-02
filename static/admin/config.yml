@@ -18,6 +18,24 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+  - label: "Profile"
+    name: "profile"
+    widget: "object"
+    fields:
+      - {label: "Public", name: "public", widget: "boolean", default: true}
+      - {label: "Name", name: "name", widget: "string"}
+      - label: "Birthdate"
+        name: "birthdate"
+        widget: "date"
+        default: ""
+        format: "MM/DD/YYYY"
+      - label: "Address"
+        name: "address"
+        widget: "object"
+        fields:
+          - {label: "Street Address", name: "street", widget: "string"}
+          - {label: "City", name: "city", widget: "string"}
+          - {label: "Postal Code", name: "post-code", widget: "string"}
   - name: "model_page"
     label: "Model Page"
     folder: "src/pages/model"
