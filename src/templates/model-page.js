@@ -2,7 +2,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import styled from "styled-components"
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 const Type1 = ({title, color, type}) => <div style={{backgroundColor: `${color}`}}><h3>{type}</h3><h4>{title}</h4></div>;
@@ -65,9 +64,6 @@ query Wage($id: String!) {
         color
         title
         type
-        items {
-          title
-        }
       }
     }
   }

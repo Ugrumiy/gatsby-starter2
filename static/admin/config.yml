@@ -28,8 +28,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "model-page"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
+      - {label: Page Meta Info, name: pageMeta, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
       - label: "Layout"
         name: "layout"
         widget: "list"
@@ -56,7 +55,7 @@ collections:
                 fields:
                   - {label: "alt", name: "title", widget: "string"}
                   - {label: "img", name: "img", widget: "image"}
-  - name: 'settings'
+  - name: 'Settings'
     label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
     editor:
@@ -64,10 +63,11 @@ collections:
     files:
       - name: 'general'
         label: 'Site Settings'
-        file: 'src/_data/site/siteSettings.yaml'
+        file: 'src/_data/globalSiteSettings/globalSiteSettings.yaml'
         description: 'General Site Settings'
         fields:
-          - { label: 'Global title', name: 'site_title', widget: 'string' }
+          - { label: 'Global meta title', name: 'meta_title', widget: 'string' }
+          - { label: 'Global meta description', name: 'meta_description', widget: 'string' }
       - name: 'items'
         label: 'Authors'
         file: 'src/_data/menu/menuConfig.yaml'
