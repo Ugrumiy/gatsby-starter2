@@ -5,3 +5,12 @@ site_metadata:
   siteDescription: An opinionated starter for Best Skoda Site
   siteUrl: https://gu.fabianschultz.com
   themeColor: '#000'
+main_nav_config:
+  - {
+    href: '/model/kodiaq',
+    title: 'Kodiaq'
+  }
+  - {
+    href: '/model/octavia',
+    title: 'Octavia'
+  }
