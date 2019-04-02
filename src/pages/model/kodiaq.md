@@ -2,7 +2,12 @@
 templateKey: model-page
 title: kodiaq
 date: 2019-04-05T12:57:40.500Z
-description: '3123123123'
+description: |-
+  3123123123
+  "foo":{
+  "bar:"baz"
+  "clink":"clonk"
+  }
 layout:
   - color: red
     title: Yahoooo updated!
