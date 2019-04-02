@@ -64,13 +64,13 @@ collections:
     files:
       - name: 'general'
         label: 'Site Settings'
-        file: 'src/_data/site/siteSettings.json'
+        file: 'src/_data/site/siteSettings.yaml'
         description: 'General Site Settings'
         fields:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
       - name: 'items'
         label: 'Authors'
-        file: 'src/_data/menu/menuConfig.json'
+        file: 'src/_data/menu/menuConfig.yaml'
         description: 'Author descriptions'
         fields:
           - name: items
