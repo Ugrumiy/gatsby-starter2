@@ -66,18 +66,21 @@ collections:
         file: 'src/_data/globalSiteSettings/globalSiteSettings.yaml'
         description: 'General Site Settings'
         fields:
-          - { label: 'Global meta title', name: 'meta_title', widget: 'string' }
-          - { label: 'Global meta description', name: 'meta_description', widget: 'string' }
-      - name: 'items'
-        label: 'Authors'
-        file: 'src/_data/menu/menuConfig.yaml'
-        description: 'Author descriptions'
-        fields:
-          - name: items
-            label: Authors
-            widget: list
-            fields:
-              - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+          - {
+            label: Metadata,
+            name: site_metadata,
+            widget: object,
+            fields: [
+              {
+                label: Title,
+                name: title,
+                widget: string
+                }, {
+                label: Description,
+                name: description,
+                widget: text}
+              ]
+            }
   - name: "pages"
     label: "Pages"
     files:
