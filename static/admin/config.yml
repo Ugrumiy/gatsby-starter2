@@ -6,6 +6,31 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "components"
+    label: "components"
+    fields:
+      - label: "Type1"
+          name: "type1"
+          widget: object
+          fields:
+            - {label: "Color", name: "color", widget: "string", default: "Blue"}
+            - {label: "Title", name: "title", widget: "string"}
+      - label: "Type2"
+        name: "type2"
+        widget: object
+        fields:
+          - {label: "Color", name: "color", widget: "string", default: "Red"}
+          - {label: "Title", name: "title", widget: "string"}
+      - label: "Gallery"
+        name: "gallery"
+        widget: object
+        fields:
+          - name: items
+            label: items
+            widget: list
+            fields:
+              - {label: "alt", name: "title", widget: "string"}
+              - {label: "img", name: "img", widget: "image"}
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
@@ -18,67 +43,11 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-  - label: "Profile"
-    name: "profile"
-    widget: "object"
-    fields:
-      - {label: "Public", name: "public", widget: "boolean", default: true}
-      - {label: "Name", name: "name", widget: "string"}
-      - label: "Birthdate"
-        name: "birthdate"
-        widget: "date"
-        default: ""
-        format: "MM/DD/YYYY"
-      - label: "Address"
-        name: "address"
-        widget: "object"
-        fields:
-          - {label: "Street Address", name: "street", widget: "string"}
-          - {label: "City", name: "city", widget: "string"}
-          - {label: "Postal Code", name: "post-code", widget: "string"}
-  - name: "model_page"
-    label: "Model Page"
-    folder: "src/pages/model"
-    create: true
-    editor:
-      preview: false
-    slug: "{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "model-page"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - label: "Layout"
-        name: "layout"
-        widget: "list"
-        types:
-          - label: "Type1"
-            name: "type1"
-            widget: object
-            fields:
-              - {label: "Color", name: "color", widget: "string", default: "Blue"}
-              - {label: "Title", name: "title", widget: "string"}
-          - label: "Type2"
-            name: "type2"
-            widget: object
-            fields:
-              - {label: "Color", name: "color", widget: "string", default: "Red"}
-              - {label: "Title", name: "title", widget: "string"}
-          - label: "Gallery"
-            name: "gallery"
-            widget: object
-            fields:
-              - name: items
-                label: items
-                widget: list
-                fields:
-                  - {label: "alt", name: "title", widget: "string"}
-                  - {label: "img", name: "img", widget: "image"}
   - name: 'settings'
     label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
     editor:
-      preview: false
+    preview: false
     files:
       - name: 'general'
         label: 'Site Settings'
