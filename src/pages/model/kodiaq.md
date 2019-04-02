@@ -20,5 +20,8 @@ layout:
   - color: yellow
     title: Yahoooo2
     type: type2
+  - color: green
+    title: ITSAMEEEE
+    type: type1
 ---
 
