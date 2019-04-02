@@ -156,7 +156,7 @@ const HeadWithQuery = props => (
     query={graphql`
       query {
         globalSiteSettingsYaml{
-            site_metadata{
+            siteMetadata{
             siteUrl
             siteTitle
             siteTitleShort
@@ -166,7 +166,7 @@ const HeadWithQuery = props => (
         }
       }
     `}
-    render={data => <Head {...data.globalSiteSettingsYaml.site_metadata} {...props} />}
+    render={data => <Head {...data.globalSiteSettingsYaml.siteMetadata} {...props} />}
   />
 );
 

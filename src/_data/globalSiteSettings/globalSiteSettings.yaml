@@ -1,11 +1,11 @@
 ---
-site_metadata:
+siteMetadata:
   siteTitle: Best Skoda Site
   siteTitleShort: Skoda Site
   siteDescription: An opinionated starter for Best Skoda Site
   siteUrl: https://gu.fabianschultz.com
   themeColor: '#000'
-main_nav_config:
+mainNavConfig:
   - {
     href: '/model/kodiaq',
     title: 'Kodiaq'

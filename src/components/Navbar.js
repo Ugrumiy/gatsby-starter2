@@ -5,33 +5,30 @@ import { graphql, Link, StaticQuery } from 'gatsby';
 const Navbar = class extends React.Component {
   render() {
     const {
-      data: {
-        menuYaml: {
-          items: menuItems,
-        },
-      },
+      config,
     } = this.props;
     return (
       <nav>
-        { menuItems.map(item => <Link to={`/${item.href}`}>{item.title}</Link>) }
+        { config.map(item => <Link to={`/${item.href}`}>{item.title}</Link>) }
       </nav>
     );
   }
 };
 Navbar.propTypes = {
-  data: PropTypes.object,
+  config: PropTypes.array,
 };
 
 export default () => (
   <StaticQuery
     query={graphql`{
-    menuYaml{
-      items {
-        href
-        title
+      globalSiteSettingsYaml {
+        mainNavConfig {
+          title
+          href
+        }
       }
     }
-  }`}
-    render={data => <Navbar data={data} />}
+  `}
+    render={data => <Navbar config={data.globalSiteSettingsYaml.mainNavConfig} />}
   />
 );
