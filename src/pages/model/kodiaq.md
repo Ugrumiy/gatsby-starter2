@@ -1,8 +1,6 @@
 ---
 templateKey: model-page
-title: kodiaq
-meta_description: 'Kodiaqssss'
-date: 2019-04-18T12:57:40.500Z
+title: Kodiaq
 description: |-
   {
   	"bar": "baz",

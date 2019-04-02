@@ -1,3 +1,7 @@
 ---
-meta_title: Best Skoda Site
-meta_description: 'Best Skoda Site Indeed'
+site_metadata:
+  siteTitle: Best Skoda Site
+  siteTitleShort: Skoda Site
+  siteDescription: An opinionated starter for Best Skoda Site
+  siteUrl: https://gu.fabianschultz.com
+  themeColor: '#000'
