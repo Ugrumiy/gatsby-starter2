@@ -73,12 +73,25 @@ collections:
             fields: [
               {
                 label: Title,
-                name: title,
+                name: siteTitle,
                 widget: string
                 }, {
-                label: Description,
-                name: description,
-                widget: text}
+                label: Title Short,
+                name: siteTitleShort,
+                widget: text
+              }, {
+                label: siteDescription,
+                name: Site Description,
+                widget: text
+              }, {
+                label: Site Url,
+                name: siteUrl,
+                widget: text
+              }, {
+                label: Theme Color,
+                name: themeColor,
+                widget: text
+              }
               ]
             }
   - name: "pages"

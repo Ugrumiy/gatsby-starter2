@@ -34,7 +34,6 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 
 const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data;
-  console.log('xxxxx', JSON.parse(post.frontmatter.description));
   return (
     <Layout>
       <AboutPageTemplate

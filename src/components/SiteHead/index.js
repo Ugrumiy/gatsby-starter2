@@ -14,7 +14,6 @@ const Head = (props) => {
     imageUrl,
     canonical = siteUrl,
   } = props;
-  console.log('aaaa', props);
   return (
     <Helmet>
       <html lang="en" />
