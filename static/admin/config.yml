@@ -10,11 +10,11 @@ collections:
     label: "components"
     fields:
       - label: "Type1"
-          name: "type1"
-          widget: object
-          fields:
-            - {label: "Color", name: "color", widget: "string", default: "Blue"}
-            - {label: "Title", name: "title", widget: "string"}
+        name: "type1"
+        widget: object
+        fields:
+          - {label: "Color", name: "color", widget: "string", default: "Blue"}
+          - {label: "Title", name: "title", widget: "string"}
       - label: "Type2"
         name: "type2"
         widget: object
