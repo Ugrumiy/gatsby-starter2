@@ -66,7 +66,7 @@ collections:
         file: 'src/_data/globalSiteSettings/globalSiteSettings.yaml'
         description: 'General Site Settings'
         fields:
-          - {label: Main Navigation Config, name: mainNavconfig, widget: list, fields: [{ label: 'Menu Item Title', name: 'title', widget: 'string' },{ label: 'Menu Item Href', name: 'href', widget: 'string' }]}
+          - {label: Main Navigation Config, name: mainNavConfig, widget: list, fields: [{ label: 'Menu Item Title', name: 'title', widget: 'string' },{ label: 'Menu Item Href', name: 'href', widget: 'string' }]}
           - {
             label: Metadata,
             name: siteMetadata,

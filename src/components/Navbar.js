@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link, StaticQuery } from 'gatsby';
@@ -5,17 +6,18 @@ import { graphql, Link, StaticQuery } from 'gatsby';
 const Navbar = class extends React.Component {
   render() {
     const {
-      config,
+      mainNavConfig,
     } = this.props;
+    console.log(this.props);
     return (
       <nav>
-        { config.map(item => <Link to={`/${item.href}`}>{item.title}</Link>) }
+        { mainNavConfig.map(item => <Link to={`/${item.href}`}>{item.title}</Link>) }
       </nav>
     );
   }
 };
 Navbar.propTypes = {
-  config: PropTypes.array,
+  mainNavConfig: PropTypes.array,
 };
 
 export default () => (
@@ -29,6 +31,6 @@ export default () => (
       }
     }
   `}
-    render={data => <Navbar config={data.globalSiteSettingsYaml.mainNavConfig} />}
+    render={data => <Navbar {...data.globalSiteSettingsYaml} />}
   />
 );
