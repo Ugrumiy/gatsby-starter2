@@ -1,6 +1,10 @@
 ---
 items:
-  - name: dsadasdasd
-  - name: qwe
-  - name: aaaaaa
-  - name: 1234r
+  - {
+    href: '/model/kodiaq',
+    title: 'Kodiaq'
+  }
+  - {
+    href: '/model/octavia',
+    title: 'Octavia'
+  }

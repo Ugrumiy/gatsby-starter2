@@ -12,14 +12,8 @@ const Navbar = class extends React.Component {
       },
     } = this.props;
     return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="navbar-start has-text-centered">
-          {menuItems.map(item => <Link className="navbar-item" to={`/${item.name}`}>{item.name}</Link>)}
-        </div>
+      <nav>
+        { menuItems.map(item => <Link to={`/${item.href}`}>{item.title}</Link>) }
       </nav>
     );
   }
@@ -27,15 +21,17 @@ const Navbar = class extends React.Component {
 Navbar.propTypes = {
   data: PropTypes.object,
 };
+
 export default () => (
   <StaticQuery
     query={graphql`{
-  menuYaml{
-    items {
-      name
+    menuYaml{
+      items {
+        href
+        title
+      }
     }
-  }
-}`}
+  }`}
     render={data => <Navbar data={data} />}
   />
 );

@@ -10,7 +10,7 @@ const Gallery = (props) => {
   console.log(props);
   return (<div>
     <h4>{props.title}</h4>
-    <div>{props.items.map(item => <img src={item.img.childImageSharp.fixed.src} alt="werwer" />)}
+    <div>{props.items.map(item => <img src="" alt="werwer" />)}
     </div>
   </div>)
 };
