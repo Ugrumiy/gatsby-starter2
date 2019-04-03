@@ -28,6 +28,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "model-page"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
       - {label: Page Meta Info, name: pageMeta, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
       - label: "Layout"
         name: "layout"

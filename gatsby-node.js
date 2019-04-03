@@ -2,6 +2,38 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
+/*
+exports.sourceNodes = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    """
+    Markdown Node
+    """
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter!
+    }
+
+    """
+    Markdown Frontmatter
+    """
+    type Frontmatter {
+      layout: LayoutJson
+    }
+
+    """
+    Author information
+    """
+    # Does not include automatically inferred fields
+    type LayoutJson implements Node {
+      name: String
+      birthday: Date
+      color: String
+    }
+  `
+  createTypes(typeDefs)
+}
+*/
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
